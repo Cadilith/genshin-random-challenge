@@ -1,0 +1,1 @@
+export const bosses = ["Stormterror Dvalin", "Lupus Boreas", "Childe", "Azhdaha", "La Signora", "Raiden Shogun", "Guardian of Apep's Oasis", "Anemo Hypostasis", "Cryo Hypostasis", "Cryo Regisvine", "Electro Hypostasis", "Geo Hypostasis"]
