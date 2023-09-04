@@ -1,3 +1,12 @@
+# Description
+
+This app generate a random challenge for Genshin Impact game. 
+It includes a random team to defeat a random boss. 
+More features will be added in the future.
+
+# Patch notes
+
+v. - date - content
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
