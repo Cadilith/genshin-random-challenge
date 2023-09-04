@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { characterList } from "./data/characters";
 import { bossList } from "./data/bosses";
@@ -8,13 +7,14 @@ function App() {
 
   const characters = characterList;
   const bosses = bossList;
+  const initialText = 'Generate';
+
+  const [buttonText, setButtonText] = useState(initialText);
   const [randomBoss, setRandomBoss] = useState();
   const [randomTeam, setRandomTeam] = useState([]);
   const [uiProps, setuiProps] = useState({
-    buttonDisabled: false,
     displayResult: false
-  }
-  );
+  });
 
 
   const getRandomBoss = () => {
@@ -34,15 +34,15 @@ function App() {
     getRandomTeam();
     getRandomBoss();
     setuiProps({
-      buttonDisabled: true,
       displayResult: true
     });
+    setButtonText('Regenerate');
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Genshin impact challenge generator</h1>
       </header>
       <main>
         {/* <div className='lists'>
@@ -72,7 +72,7 @@ function App() {
               }
             </ul>
           </div>}
-          <button type='button' onClick={handleGenerateChallenge}>Generate</button>
+          <button type='button' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
     </div>
