@@ -1,1 +1,1 @@
-export const characters = ["Albedo", "Alhaitham", "Aloy", "Amber", "Arataki Itto", "Baizhu", "Barbara", "Beidou", "Bennet", "Candace", "Chongyun", "Collei"]
+export const characterList = ["Albedo", "Alhaitham", "Aloy", "Amber", "Arataki Itto", "Baizhu", "Barbara", "Beidou", "Bennet", "Candace", "Chongyun", "Collei"]
