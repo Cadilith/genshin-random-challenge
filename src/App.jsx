@@ -6,6 +6,7 @@ import { useState } from 'react';
 function App() {
 
   const characters = characterList;
+  let availableCharacters = characters;
   const bosses = bossList;
   const initialText = 'Generate';
 
@@ -24,8 +25,10 @@ function App() {
   const getRandomTeam = () => {
     let team = [];
     for (let index = 0; index < 4; index++) {
-      let randomTeamMate = characters[Math.floor(Math.random() * characters.length)];
+      let randomTeamMate = availableCharacters[Math.floor(Math.random() * availableCharacters.length)];
+      availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
       team.push(randomTeamMate);
+      console.log(availableCharacters)
     }
     setRandomTeam(team);
   };
