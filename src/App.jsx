@@ -17,15 +17,18 @@ function App() {
     displayResult: false
   });
 
+  function randomize(list) {
+    return list[Math.floor(Math.random()*list.length)];
+  }
 
   const getRandomBoss = () => {
-    setRandomBoss(bosses[Math.floor(Math.random() * bosses.length)]);
+    setRandomBoss(randomize(bosses));
   };
 
   const getRandomTeam = () => {
     let team = [];
     for (let index = 0; index < 4; index++) {
-      let randomTeamMate = availableCharacters[Math.floor(Math.random() * availableCharacters.length)];
+      let randomTeamMate = randomize(availableCharacters);
       availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
       team.push(randomTeamMate);
       console.log(availableCharacters)
