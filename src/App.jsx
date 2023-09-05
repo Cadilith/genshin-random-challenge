@@ -17,6 +17,12 @@ function App() {
     displayResult: false
   });
 
+  function capitalizeFirstLetter(string) {
+    
+    return(string[0].toUpperCase() +
+        string.slice(1));
+}
+
   function randomize(list) {
     return list[Math.floor(Math.random()*list.length)];
   }
@@ -30,7 +36,7 @@ function App() {
     for (let index = 0; index < 4; index++) {
       let randomTeamMate = randomize(availableCharacters);
       availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
-      team.push(randomTeamMate);
+      team.push(capitalizeFirstLetter(randomTeamMate));
       console.log(availableCharacters)
     }
     setRandomTeam(team);
