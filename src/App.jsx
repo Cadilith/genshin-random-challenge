@@ -2,6 +2,7 @@ import './App.css';
 import { characterList } from "./data/characters";
 import { bossList } from "./data/bosses";
 import { useState } from 'react';
+import Card from './components/Card/Card';
 
 function App() {
 
@@ -75,16 +76,16 @@ function App() {
         </div> */}
         <div className='generator'>
           {uiProps.displayResult && <div className='generator__result'>
-            Defeat {randomBoss} with
+            Defeat <div className='generator__result portrait'>{< Card cover={"https://webstatic.hoyoverse.com/upload/op-public/2023/04/27/c19b1f75f760f7b9647ec40f098d9373_5463326139107464819.png"} name={randomBoss}/>}</div>with
             <ul className='team'>
               {
                 randomTeam.map((teamMate, index) => (
-                  <li key={index} className='generator__result__list-item'>{teamMate}</li>
+                  <li key={index} className='generator__result__list-item portrait'>{< Card cover={"https://webstatic.hoyoverse.com/upload/op-public/2023/04/27/c19b1f75f760f7b9647ec40f098d9373_5463326139107464819.png"} name={teamMate}/>}</li>
                 ))
               }
             </ul>
           </div>}
-          <button type='button' onClick={handleGenerateChallenge}>{buttonText}</button>
+          <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
     </div>
