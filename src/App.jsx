@@ -52,6 +52,12 @@ function App() {
     setButtonText('Regenerate');
   }
 
+  function getCoverImg(name){
+    let lowerCaseName = name.toLowerCase();
+    let fileName = lowerCaseName.replace(/\s/g, '-');
+    return fileName;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -76,11 +82,11 @@ function App() {
         </div> */}
         <div className='generator'>
           {uiProps.displayResult && <div className='generator__result'>
-            Defeat <div className='generator__result portrait'>{< Card cover={"https://webstatic.hoyoverse.com/upload/op-public/2023/04/27/c19b1f75f760f7b9647ec40f098d9373_5463326139107464819.png"} name={randomBoss}/>}</div>with
+            Defeat <div className='generator__result portrait'>{< Card cover={"/bosses/"+getCoverImg(randomBoss)+".png"} name={randomBoss}/>}</div>with
             <ul className='team'>
               {
                 randomTeam.map((teamMate, index) => (
-                  <li key={index} className='generator__result__list-item portrait'>{< Card cover={"https://webstatic.hoyoverse.com/upload/op-public/2023/04/27/c19b1f75f760f7b9647ec40f098d9373_5463326139107464819.png"} name={teamMate}/>}</li>
+                  <li key={index} className='generator__result__list-item portrait'>{< Card cover={"/characters/"+getCoverImg(teamMate)+".png"} name={teamMate}/>}</li>
                 ))
               }
             </ul>
