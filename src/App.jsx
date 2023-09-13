@@ -36,7 +36,11 @@ function App() {
     let team = [];
     for (let index = 0; index < 4; index++) {
       let randomTeamMate = randomize(availableCharacters);
-      availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
+      if (randomTeamMate.includes("traveler")){
+        availableCharacters=availableCharacters.filter((character) => character.includes("traveler") === false)
+      }else {
+        availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
+      };
       team.push(capitalizeFirstLetter(randomTeamMate));
       console.log(availableCharacters)
     }
