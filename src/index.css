@@ -40,10 +40,10 @@ h1 {
 }
 
 .portrait{
-  display: block;
   display: flex;
   flex-direction: column;
-  width: 110px;
+  width: 200px;
+  height: 300px;
   border-radius: 15px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   border: 1px solid #8a6a43;
@@ -54,7 +54,6 @@ h1 {
 .portrait .img{
   width: 100%;
   height: 70%;
-  z-index: 2;
 }
 .portrait .name {
   display: flex;
@@ -62,18 +61,29 @@ h1 {
   justify-content: center;
   height: 30%;
   width: 100%;
+  min-width: 0px;
   box-sizing: border-box;
   padding: 5px;
   text-align: center;
   color: #ffff;
   background-color: rgba(0,0,0,0.5);
-  font-size: 0.8rem;
+  font-size: 1.3rem;
+  
+}
+.name p { 
+  max-height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 .team {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .generate__btn {
@@ -100,7 +110,10 @@ h1 {
   max-width: 100%;
  }
  .portrait {
-  width: 20%;
-  height: auto;
+  width: 40%;
+  height: 170px;
+ }
+ .portrait .name {
+  font-size: 1rem;
  }
 }

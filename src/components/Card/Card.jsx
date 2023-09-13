@@ -2,7 +2,7 @@ function Card({ cover, name }) {
     return (
         <>
             <img className="img" src={cover} alt={name} />
-            <p className="name">{name}</p>
+            <div className="name"><p>{name}</p></div>
         </>
     )
 }
