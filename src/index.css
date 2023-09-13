@@ -1,8 +1,13 @@
+@font-face {
+  font-family: 'HYWenHei 85W';
+  font-style: normal;
+  font-weight: normal;
+  src: local('HYWenHei 85W'), url('assets/font/zhcn.woff') format('woff');
+  }
+
 body {
+  font-family: 'HYWenHei 85W';
   margin: auto;
-  font-family: Tahoma, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   max-width: 1024px;
 }
 
@@ -26,11 +31,11 @@ h1 {
   text-align: center;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  font-family: Georgia, serif;
   font-size: 2.5rem;
+  font-weight: normal;
 }
 .generator {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .generator__result {
@@ -67,7 +72,7 @@ h1 {
   text-align: center;
   color: #ffff;
   background-color: rgba(0,0,0,0.5);
-  font-size: 1.3rem;
+  font-size: 1.13rem;
   
 }
 .name p { 
