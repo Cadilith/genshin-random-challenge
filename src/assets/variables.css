@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'HYWenHei 85W';
+    font-style: normal;
+    font-weight: normal;
+    src: local('HYWenHei 85W'), url('./font/zhcn.woff') format('woff');
+    };
+    
+:root {
+    --main-color : #6D767D;
+    --bg-color : #EFF1F4;
+
+};
