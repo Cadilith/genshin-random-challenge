@@ -42,7 +42,6 @@ function App() {
         availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
       };
       team.push(capitalizeFirstLetter(randomTeamMate));
-      console.log(availableCharacters)
     }
     setRandomTeam(team);
   };
