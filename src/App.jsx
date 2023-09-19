@@ -19,13 +19,13 @@ function App() {
   });
 
   function capitalizeFirstLetter(string) {
-    
-    return(string[0].toUpperCase() +
-        string.slice(1));
-}
+
+    return (string[0].toUpperCase() +
+      string.slice(1));
+  }
 
   function randomize(list) {
-    return list[Math.floor(Math.random()*list.length)];
+    return list[Math.floor(Math.random() * list.length)];
   }
 
   const getRandomBoss = () => {
@@ -36,9 +36,9 @@ function App() {
     let team = [];
     for (let index = 0; index < 4; index++) {
       let randomTeamMate = randomize(availableCharacters);
-      if (randomTeamMate.includes("traveler")){
-        availableCharacters=availableCharacters.filter((character) => character.includes("traveler") === false)
-      }else {
+      if (randomTeamMate.includes("traveler")) {
+        availableCharacters = availableCharacters.filter((character) => character.includes("traveler") === false)
+      } else {
         availableCharacters = availableCharacters.filter((character) => character !== randomTeamMate);
       };
       team.push(capitalizeFirstLetter(randomTeamMate));
@@ -56,7 +56,7 @@ function App() {
     setButtonText('Regenerate');
   }
 
-  function getCoverImg(name){
+  function getCoverImg(name) {
     let lowerCaseName = name.toLowerCase();
     let fileName = lowerCaseName.replace(/\s/g, '-');
     return fileName;
@@ -65,7 +65,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Genshin impact challenge generator</h1>
+        <h1>Genshin Impact Challenge</h1>
       </header>
       <main>
         {/* <div className='lists'>
@@ -86,11 +86,11 @@ function App() {
         </div> */}
         <div className='generator'>
           {uiProps.displayResult && <div className='generator__result'>
-            Defeat <div className='generator__result portrait'>{< Card cover={"/bosses/"+getCoverImg(randomBoss)+".png"} name={randomBoss}/>}</div>with
+            <div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line'/>Defeat<img src='/line.svg' alt='separation line'/></div> <div className='portrait'>{< Card cover={"/bosses/" + getCoverImg(randomBoss) + ".png"} name={randomBoss} />}</div><div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line'/>with<img src='/line.svg' alt='separation line'/></div>
             <ul className='team'>
               {
                 randomTeam.map((teamMate, index) => (
-                  <li key={index} className='generator__result__list-item portrait'>{< Card cover={"/characters/"+getCoverImg(teamMate)+".png"} name={teamMate}/>}</li>
+                  <li key={index} className='portrait'>{< Card cover={"/characters/" + getCoverImg(teamMate) + ".png"} name={teamMate} />}</li>
                 ))
               }
             </ul>
@@ -98,6 +98,13 @@ function App() {
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
+      <footer>
+        <p>© 2023 Tiffanie Orsoni. All rights reserved.
+        </p>
+        <p>Genshin Impact Challenge is an unofficial web application created by fans, designed for enthusiasts of the Action-RPG game Genshin Impact developed by miHoYo and its associates. Genshin Impact Challenge is in no way affiliated with miHoYo or its associates.
+          All logos, game names, trademarks, and artistic works associated with the game Genshin Impact are the exclusive property of miHoYo and its associates.</p>
+        <a href=''>Contact me</a>
+      </footer>
     </div>
   );
 }
