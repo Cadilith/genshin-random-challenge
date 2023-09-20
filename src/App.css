@@ -6,6 +6,7 @@
 }
 main{
   flex: auto;
+  box-sizing: border-box;
 }
 
 .App-header {
