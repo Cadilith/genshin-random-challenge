@@ -84,7 +84,7 @@ function App() {
           </ul>
         </div> */}
         <div className='generator'>
-          {uiProps.displayResult && <div className='generator__result'>
+          {uiProps.displayResult ? <div className='generator__result'>
             <div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line'/>Defeat<img src='/line.svg' alt='separation line'/></div> <div className='portrait'>{< Card cover={"/bosses/" + getCoverImg(randomBoss) + ".png"} name={randomBoss} />}</div><div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line'/>with<img src='/line.svg' alt='separation line'/></div>
             <ul className='team'>
               {
@@ -93,7 +93,7 @@ function App() {
                 ))
               }
             </ul>
-          </div>}
+          </div> : <div className='loader-div'><span className="loader"></span></div>}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
