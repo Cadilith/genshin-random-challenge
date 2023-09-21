@@ -1,9 +1,11 @@
 import './App.css';
+import { useEffect } from 'react';
 import { characterList } from "./data/characters";
 import { bossList } from "./data/bosses";
 import { useState } from 'react';
 import Card from './components/Card/Card';
 import FloatingPaimon from './components/FloatingPaimon/FloatingPaimon';
+import DotTyping from './components/DotTyping/DotTyping'
 
 function App() {
 
@@ -15,9 +17,18 @@ function App() {
   const [buttonText, setButtonText] = useState(initialText);
   const [randomBoss, setRandomBoss] = useState();
   const [randomTeam, setRandomTeam] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [uiProps, setuiProps] = useState({
     displayResult: false
   });
+
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+  }, [loading]);
 
   function capitalizeFirstLetter(string) {
 
@@ -48,12 +59,19 @@ function App() {
   };
 
   const handleGenerateChallenge = () => {
+    setuiProps({
+      displayResult: false
+    });
     getRandomTeam();
     getRandomBoss();
-    setuiProps({
-      displayResult: true
-    });
-    setButtonText('Regenerate');
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false);
+      setuiProps({
+        displayResult: true
+      });
+      setButtonText('Regenerate');
+    }, 2000)
   }
 
   function getCoverImg(name) {
@@ -94,7 +112,7 @@ function App() {
                 ))
               }
             </ul>
-          </div> : < FloatingPaimon />}
+          </div> : <><FloatingPaimon /> {loading && <DotTyping />}</>}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
