@@ -1,85 +1,49 @@
-@import "../src/assets/variables.css";
-
-body {
+@font-face {
   font-family: 'HYWenHei 85W';
-  color: var(--main-color);
-  margin: auto;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)),url("../public/background.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-}
-ul, li, p, h1 {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-img {
-  object-fit: cover;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}   
-button:hover{
-  cursor: pointer;
-}    
-h1 {
-  text-align: center;
+  src: local('HYWenHei 85W'), url('./fonts/zhcn.woff') format('woff');
+  unicode-range: U+0020-007F;
+  font-style: normal;
   font-weight: normal;
-  font-size: 48px;
-  line-height: 70px;
 }
-header, footer{
-  width: 100%;
-  min-height: 100px;
-  padding: 15px;
-  background-color: white;
-  box-sizing: border-box;
-}
-header{
-  margin-bottom: 15px;
-}
-main{
-  max-width: 1024px;
-  margin: auto;
-  border-radius: 20px;
-  width: 75%;
-  background-color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-}
-.generator{
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.generator {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   flex: auto;
 }
-.line-before{
+
+.line-before {
   transform: rotate(180deg);
 }
-.defeat-with{
+
+.defeat-with {
   white-space: nowrap;
 }
-.defeat-with img{
+
+.defeat-with img {
   margin: 0px 20px 0px 20px;
   vertical-align: middle;
 }
-.generator__result{
+
+.generator__result {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   font-size: 24px;
 }
+
 .team {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-.portrait{
+
+.portrait {
   display: flex;
   flex-direction: column;
   max-width: 150px;
@@ -91,11 +55,13 @@ main{
   border: 1px solid #7F858A;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
 }
-.portrait img{
+
+.portrait img {
   width: 100%;
   height: 76%;
 }
-.portrait .name{
+
+.portrait .name {
   display: flex;
   flex: auto;
   flex-direction: column;
@@ -110,7 +76,8 @@ main{
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.generate__btn{
+
+.generate__btn {
   background-color: var(--bg-color);
   border: 1px solid rgba(109, 118, 125, 0.5);
   font-family: inherit;
@@ -120,18 +87,21 @@ main{
   padding: 10px 40px 10px 40px;
   margin-top: 60px;
 }
-footer{
+
+footer {
   margin-top: 15px;
   font-size: 11px;
   font-family: 'Open Sans', serif;
   margin-top: 15px;
   text-align: center;
 }
+
 footer a {
   font-size: 13px;
   font-weight: 800;
   color: inherit;
 }
+
 footer p {
   margin-bottom: 10px;
 }
@@ -149,6 +119,7 @@ footer p {
   overflow: hidden;
   transform: rotate(-45deg);
 }
+
 .loader:before,
 .loader:after {
   content: "";
@@ -160,50 +131,37 @@ footer p {
   background-color: #fff;
   animation: wave 5s linear infinite;
 }
+
 .loader:before {
   border-radius: 30%;
   background: rgba(255, 255, 255, 0.4);
   animation: wave 5s linear infinite;
 }
+
 @keyframes wave {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 /* responsive */
-
-@media (max-width:800px) {
-  h1{
-    font-size: 36px;
-  }
-}
 @media (max-width:600px) {
-  main{
-    padding: 10px;
-    margin: 0;
-    width: 100%;
-    border-radius: 0;
+
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
-  header{
-    min-height: 60px;
+
+  .generate__btn {
+    margin-top: 25px;
+    font-size: 20px;
   }
-h1{
-  font-size:20px ;
-  line-height: 30px;
-}
-.team {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-.generate__btn{
-  margin-top: 25px;
-  font-size: 20px;
-}
-.generator__result{
-  font-size: 20px;
-}
+
+  .generator__result {
+    font-size: 20px;
+  }
 }
