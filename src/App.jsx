@@ -65,11 +65,11 @@ function App() {
     getRandomTeam();
     getRandomBoss();
     setLoading(true);
-    setTimeout(()=>{
+    setuiProps({
+      displayResult: true
+    });
+    setTimeout(() => {
       setLoading(false);
-      setuiProps({
-        displayResult: true
-      });
       setButtonText('Regenerate');
     }, 2000)
   }
@@ -103,8 +103,8 @@ function App() {
           </ul>
         </div> */}
         <div className='generator'>
-          {uiProps.displayResult ? <div className='generator__result'>
-            <div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line'/>Defeat<img src='/line.svg' alt='separation line'/></div> <div className='portrait'>{< Card cover={"/bosses/" + getCoverImg(randomBoss) + ".png"} name={randomBoss} />}</div><div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line'/>with<img src='/line.svg' alt='separation line'/></div>
+          {uiProps.displayResult && <div className={`generator__result ${loading ? 'hide' : 'show'}`}>
+            <div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line' />Defeat<img src='/line.svg' alt='separation line' /></div> <div className='portrait'>{< Card cover={"/bosses/" + getCoverImg(randomBoss) + ".png"} name={randomBoss} />}</div><div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line' />with<img src='/line.svg' alt='separation line' /></div>
             <ul className='team'>
               {
                 randomTeam.map((teamMate, index) => (
@@ -112,7 +112,8 @@ function App() {
                 ))
               }
             </ul>
-          </div> : <div className='loading'><FloatingPaimon /><div className={`dots ${loading && 'show'}`}><DotTyping /></div></div>}
+          </div>}
+          {(!uiProps.displayResult || loading) && <div className='loading'><FloatingPaimon /><div className={`dots ${loading && 'show'}`}><DotTyping /></div></div>}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
