@@ -75,7 +75,6 @@
   color: inherit;
   border-radius: 25px;
   padding: 10px 40px 10px 40px;
-  margin-top: 60px;
 }
 
 footer {
@@ -99,7 +98,6 @@ footer p {
   }
 
   .generate__btn {
-    margin-top: 25px;
     font-size: 20px;
   }
 
