@@ -23,6 +23,10 @@ body {
   background-attachment: fixed;
 }
 
+a{
+  color: inherit;
+}
+
 ul,
 li,
 p,
