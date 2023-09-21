@@ -136,13 +136,15 @@ footer p {
 }
 
 /* responsive */
+@media (max-width:800px) {
+  .portrait .name {
+    font-size: 16px;
+  }
+}
+
 @media (max-width:600px) {
   .portrait {
     max-height: 180px;
-  }
-
-  .portrait .name {
-    font-size: 16px;
   }
 
   .team {
