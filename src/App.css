@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'HYWenHei 85W';
+  font-family: 'HYWenHei', sans-serif;
   color: var(--main-color);
   margin: auto;
   width: 100%;
