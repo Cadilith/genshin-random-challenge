@@ -1,0 +1,72 @@
+.paimon-frame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.shadow {
+    display: block;
+    background-color: black;
+    border-radius: 10px;
+    width: 160px;
+    height: 5px;
+    animation: shadow 5s ease-in-out infinite;
+}
+.paimon{
+    width: 400px;
+    height: auto;
+}
+.floating {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes shadow {
+	0% {
+        filter: blur(12px);
+        width: 120px;
+	}
+	50% {
+		filter: blur(16px);
+        width: 160px;
+	}
+	100% {
+        filter: blur(12px);
+        width: 120px;
+	}
+}
+
+@media (max-width:600px) {
+    .paimon {
+        width: 300px;
+    }
+    .shadow{
+        width: 140px;
+    }
+
+    @keyframes shadow {
+        0% {
+            filter: blur(12px);
+            width: 60px;
+        }
+        50% {
+            filter: blur(16px);
+            width: 100px;
+        }
+        100% {
+            filter: blur(12px);
+            width: 60px;
+        }
+    }
+}

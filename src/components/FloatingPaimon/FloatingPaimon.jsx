@@ -1,8 +1,12 @@
+import './floatingpaimon.css';
+import paimon from '../../assets/img/paimon.png'
+
 function FloatingPaimon() {
     return (
-        <>
-            <img className="paimon floating" src='../assets/img/paimon.png' alt="Paimon is waiting for generation" />
-        </>
+        <div className="paimon-frame">
+            <img className="paimon floating" src={paimon} alt="Paimon is waiting for generation" />
+            <span className="shadow"></span>
+        </div>
     )
 }
 

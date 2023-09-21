@@ -3,6 +3,7 @@ import { characterList } from "./data/characters";
 import { bossList } from "./data/bosses";
 import { useState } from 'react';
 import Card from './components/Card/Card';
+import FloatingPaimon from './components/FloatingPaimon/FloatingPaimon';
 
 function App() {
 
@@ -93,7 +94,7 @@ function App() {
                 ))
               }
             </ul>
-          </div> : <div className='loader-div'><span className="loader"></span></div>}
+          </div> : < FloatingPaimon />}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>
