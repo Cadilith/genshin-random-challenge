@@ -112,7 +112,7 @@ function App() {
                 ))
               }
             </ul>
-          </div> : <><FloatingPaimon /> {loading && <DotTyping />}</>}
+          </div> : <div className='loading'><FloatingPaimon /><div className={`dots ${loading && 'show'}`}><DotTyping /></div></div>}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main>

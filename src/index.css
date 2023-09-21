@@ -6,6 +6,27 @@
   flex: auto;
 }
 
+.loading{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  animation: opacity 1.5s ease-in-out;
+}
+.dots{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 50px;
+  opacity: 0;
+  margin-left: -20px;
+}
+
+.show {
+  opacity: 1;
+  transition: all 0.3s;
+}
+
 .line-before {
   transform: rotate(180deg);
 }
@@ -25,7 +46,7 @@
   align-items: center;
   gap: 20px;
   font-size: 28px;
-  animation: opacity 1.1s;
+  animation: opacity 1.1s ease-in-out;
 }
 
 .team {
