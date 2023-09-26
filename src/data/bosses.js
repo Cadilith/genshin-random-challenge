@@ -30,4 +30,7 @@ export const bossList = ["Cryo Regisvine",
     "La Signora",
     "Raiden Shogun Puppet",
     "Scaramouche",
-    "Apep Oasis Guardian"]
+    "Apep Oasis Guardian",
+"Millennial Pearl Seahorse",
+"Experimental Field Generator",
+]

@@ -41,6 +41,7 @@ export const characterList = [
     "mika",
     "mona",
     "nahida",
+    "neuvillette",
     "nilou",
     "ningguang",
     "noelle",
