@@ -6,14 +6,15 @@
   flex: auto;
   position: relative;
 }
-
-.loading {
+.loading, .generator__result{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  animation: opacity 1.5s ease-in-out;
+  justify-content: center;
   flex: auto;
+}
+.loading {
+  flex-direction: row;
+  animation: opacity 1.5s ease-in-out;
 }
 
 .dots {
@@ -48,13 +49,11 @@
 }
 
 .generator__result {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   font-size: 28px;
   opacity: 1;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .team {
