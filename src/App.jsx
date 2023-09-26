@@ -5,7 +5,8 @@ import { bossList } from "./data/bosses";
 import { useState } from 'react';
 import Card from './components/Card/Card';
 import FloatingPaimon from './components/FloatingPaimon/FloatingPaimon';
-import DotTyping from './components/DotTyping/DotTyping'
+import DotTyping from './components/DotTyping/DotTyping';
+import Collapse from './components/Collapse';
 
 function App() {
 
@@ -86,22 +87,15 @@ function App() {
         <h1>Genshin Impact Challenge</h1>
       </header>
       <main>
-        {/* <div className='lists'>
-          <ul>
-            {characters && characters.map((character, index) => (
-              <li key={index}>
-                {character}
-              </li>
-            ))}
-          </ul>
-          <ul>
-            {bosses && bosses.map((boss, index) => (
-              <li key={index}>
-                {boss}
-              </li>
-            ))}
-          </ul>
-        </div> */}
+        <div className='selections'>
+          <Collapse collapseTitle='Exclude characters'>
+          <ul className='character__list'>
+            {characterList.map((character, index) => (
+              <li key={index} className='portrait'><Card cover={"/characters/" + getCoverImg(character) + '.png'} name={character} /></li>
+            )
+            )}
+            </ul></Collapse>
+        </div>
         <div className='generator'>
           {uiProps.displayResult && <div className={`generator__result ${loading ? 'hide' : 'show'}`}>
             <div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line' />Defeat<img src='/line.svg' alt='separation line' /></div> <div className='portrait'>{< Card cover={"/bosses/" + getCoverImg(randomBoss) + ".png"} name={randomBoss} />}</div><div className='defeat-with'><img className='line-before' src='/line.svg' alt='separation line' />with<img src='/line.svg' alt='separation line' /></div>
