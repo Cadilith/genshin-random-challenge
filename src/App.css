@@ -5,6 +5,24 @@
   --bg-color: #EFF1F4;
 }
 
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5px;
+}
+
+/* app */
 .App {
   text-align: center;
   display: flex;

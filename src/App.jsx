@@ -91,7 +91,7 @@ function App() {
           <Collapse collapseTitle='Exclude characters'>
           <ul className='character__list'>
             {characterList.map((character, index) => (
-              <li key={index} className='portrait'><Card cover={"/characters/" + getCoverImg(character) + '.png'} name={character} /></li>
+              <li key={index} className='portrait'><Card cover={"/characters/" + getCoverImg(character) + '.png'} name={capitalizeFirstLetter(character)} /></li>
             )
             )}
             </ul></Collapse>

@@ -24,7 +24,8 @@
 }
 
 .collapse-parent {
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .collapse-parent.show {
   height: 300px;
@@ -33,6 +34,8 @@
 .collapse-parent.hide {
   height: 0px;
   transition: height 0.6s ease;
+  padding-right: 7px;
+  overflow-y: hidden;
 }
 .collapse-content {
   background-color: var(--bg-color);
@@ -47,6 +50,9 @@ button {
 @media (max-width: 600px) {
   .collapse-title{
   padding: 5px 10px 5px 10px;
+  }
+  .collapse-title p{
+    font-size: 18px;
   }
   .arrow {
     width: 16px;
