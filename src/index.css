@@ -143,6 +143,7 @@
 .character__list .portrait {
   align-self: center;
   justify-self: center;
+  height: 100%;
 }
 
 .character__list .name {
