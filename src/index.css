@@ -1,5 +1,4 @@
 /* generator */
-
 .generator {
   display: flex;
   flex-direction: column;
@@ -78,6 +77,7 @@
   box-sizing: border-box;
   border: 1px solid #7F858A;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .generator .portrait {
@@ -140,6 +140,10 @@
   box-sizing: border-box;
 }
 
+.character__list li:hover{
+  cursor: pointer;
+}
+
 .character__list .portrait {
   align-self: center;
   justify-self: center;
@@ -149,6 +153,13 @@
 .character__list .name {
   font-size: 12px;
 }
+
+.excluded {
+position: relative;
+opacity: 0.4;
+transition: opacity 0.2s ease-in-out;
+}
+
 
 @keyframes opacity {
   0% {
