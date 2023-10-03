@@ -9,6 +9,7 @@ import Collapse from './components/Collapse';
 import MenuItem from './components/MenuItem/MenuItem';
 
 function App() {
+  const [errorMsg, setErrorMsg] = useState();
   let initialCharacters = characterList;
   const [availableCharacters, setAvailableCharacters] = useState(initialCharacters);
   const bosses = bossList;
@@ -51,8 +52,10 @@ function App() {
   const getRandomTeam = () => {
     let team = [];
     let updatedAvailableCharacters = availableCharacters;
+    //a team needs at leat 4 characters
     if (availableCharacters.length < 4) {
-      alert("Please select at least 4 characters");
+      setErrorMsg("Please select at least 4 characters");
+      throw new Error ("Select at leat 4 characters");
     } else {
       for (let index = 0; index < 4; index++) {
         let randomTeamMate = randomize(updatedAvailableCharacters);
@@ -72,21 +75,25 @@ function App() {
 
   //init results display, set challenge, display results after 1.5sec loading animation
   const handleGenerateChallenge = () => {
+    setErrorMsg();
     setuiProps({
       displayResult: false
     });
-    getRandomTeam();
-    getRandomBoss();
-    setLoading(true);
-    setuiProps({
-      displayResult: true
-    });
-    setTimeout(() => {
-      setLoading(false);
-      setButtonText('Regenerate');
-    }, 1500)
-    console.log(availableCharacters)
-
+    try {
+      getRandomTeam();
+      getRandomBoss();
+      setLoading(true);
+      setuiProps({
+        displayResult: true
+      });
+      setTimeout(() => {
+        setLoading(false);
+        setButtonText('Regenerate');
+      }, 1500)
+      console.log(availableCharacters)
+    } catch (error) {
+      
+    }
   }
 
 
@@ -143,7 +150,13 @@ function App() {
               }
             </ul>
           </div>}
-          {(!uiProps.displayResult || loading) && <div className='loading'><FloatingPaimon /><div className={`dots ${loading && 'show'}`}><DotTyping /></div></div>}
+          {(!uiProps.displayResult || loading) && <div className='loading'><FloatingPaimon />
+            {errorMsg && 
+            <div className="errormsg">
+              <p>{errorMsg}</p>
+            </div>
+            }
+            <div className={`dots ${loading && 'show'}`}><DotTyping /></div></div>}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main >
