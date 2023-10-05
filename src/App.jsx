@@ -2,6 +2,9 @@ import './App.css';
 import { characterList } from "./data/characters";
 import { bossList } from "./data/bosses";
 import { useState, useEffect } from 'react';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Card from './components/Card/Card';
 import FloatingPaimon from './components/FloatingPaimon/FloatingPaimon';
 import DotTyping from './components/DotTyping/DotTyping';
@@ -136,9 +139,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Genshin Impact Challenge</h1>
-      </header>
+      <Header />
       <main>
         <div className='selections'>
           <Collapse collapseTitle='Exclude characters'>
@@ -179,12 +180,7 @@ function App() {
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>
       </main >
-      <footer>
-        <p>© 2023 <a href='http://tiffanieorsoni.com' target='blank'>Tiffanie Orsoni</a> all rights reserved.
-        </p>
-        <p>Genshin Impact Challenge is an unofficial web application created by fans, designed for enthusiasts of the Action-RPG game Genshin Impact developed by miHoYo and its associates. Genshin Impact Challenge is in no way affiliated with miHoYo or its associates.
-          All logos, game names, trademarks, and artistic works associated with the game Genshin Impact are the exclusive property of miHoYo and its associates.</p>
-      </footer>
+      <Footer />
     </div >
   );
 }
