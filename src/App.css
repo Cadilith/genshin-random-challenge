@@ -5,6 +5,24 @@
   --bg-color: #EFF1F4;
 }
 
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5px;
+}
+
+/* app */
 .App {
   text-align: center;
   display: flex;
@@ -23,7 +41,7 @@ body {
   background-attachment: fixed;
 }
 
-a{
+a {
   color: inherit;
 }
 
@@ -72,18 +90,38 @@ header {
 main {
   flex: auto;
   box-sizing: border-box;
-  max-width: 1024px;
+  max-width: 1900px;
   margin: auto;
   border-radius: 20px;
-  width: 75%;
+  width: 90%;
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 50px;
+  gap: 30px;
 }
 
 .App-header {
   width: 100%;
+}
+
+footer {
+  margin-top: 15px;
+  font-size: 11px;
+  font-family: 'Open Sans', serif;
+  margin-top: 15px;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+@media (max-width:1125px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width:800px) {
@@ -92,7 +130,7 @@ main {
   }
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
   main {
     padding: 10px;
     margin: 0;

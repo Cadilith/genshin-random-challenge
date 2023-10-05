@@ -3,7 +3,7 @@ import './dottyping.css';
 
 function DotTyping() {
     return (
-        <div class="dot-typing"></div>
+        <div className="dot-typing"></div>
     )
 }
 
