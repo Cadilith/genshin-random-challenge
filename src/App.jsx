@@ -14,7 +14,6 @@ function App() {
   const initialbosses = bossList;
   const [availableCharacters, setAvailableCharacters] = useState(initialCharacters);
   const [availableBosses, setAvailableBosses] = useState(initialbosses);
-  const bosses = bossList;
   const initialText = 'Generate';
   const [buttonText, setButtonText] = useState(initialText);
   const [randomBoss, setRandomBoss] = useState();
@@ -47,7 +46,12 @@ function App() {
 
   //pick random boss name
   const getRandomBoss = () => {
-    setRandomBoss(randomize(availableBosses));
+    if (availableBosses.length < 1) {
+      setErrorMsg("Please select at least 1 boss to fight");
+      throw new Error("Select at leat 1 boss");
+    } else {
+      setRandomBoss(randomize(availableBosses));
+    }
   };
 
   //Set a team of 4 random characters from the list
@@ -57,7 +61,7 @@ function App() {
     //a team needs at leat 4 characters
     if (availableCharacters.length < 4) {
       setErrorMsg("Please select at least 4 characters");
-      throw new Error ("Select at leat 4 characters");
+      throw new Error("Select at leat 4 characters");
     } else {
       for (let index = 0; index < 4; index++) {
         let randomTeamMate = randomize(updatedAvailableCharacters);
@@ -94,7 +98,7 @@ function App() {
       }, 1500)
       console.log(availableCharacters)
     } catch (error) {
-      
+
     }
   }
 
@@ -124,11 +128,11 @@ function App() {
     excludeItem(availableCharacters, setAvailableCharacters, name);
   }
 
-    //exclude boss from available selection
-    const excludeBossHandler = (e) => {
-      const name = e.currentTarget.id;
-      excludeItem(availableBosses, setAvailableBosses, name);
-    }
+  //exclude boss from available selection
+  const excludeBossHandler = (e) => {
+    const name = e.currentTarget.id;
+    excludeItem(availableBosses, setAvailableBosses, name);
+  }
 
   return (
     <div className="App">
@@ -145,7 +149,7 @@ function App() {
                 </li>
               ))}
             </ul></Collapse>
-            <Collapse collapseTitle='Exclude bosses'>
+          <Collapse collapseTitle='Exclude bosses'>
             <ul className='boss__list'>
               {bossList.map((boss, index) => (
                 <li key={boss + index} id={boss} onClick={excludeBossHandler} >
@@ -166,12 +170,11 @@ function App() {
               }
             </ul>
           </div>}
+          {errorMsg && <div className="errormsg">
+            <p>{errorMsg}</p>
+          </div>
+          }
           {(!uiProps.displayResult || loading) && <div className='loading'><FloatingPaimon />
-            {errorMsg && 
-            <div className="errormsg">
-              <p>{errorMsg}</p>
-            </div>
-            }
             <div className={`dots ${loading && 'show'}`}><DotTyping /></div></div>}
           <button type='button' className='generate__btn' onClick={handleGenerateChallenge}>{buttonText}</button>
         </div>

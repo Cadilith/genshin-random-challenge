@@ -3,11 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex: auto;
   position: relative;
   gap: 25px;
   width: 38%;
+}
+
+.errormsg {
+  font-size: 24px;
+  animation: shake 3s infinite;
 }
 
 .loading,
@@ -16,6 +21,7 @@
   align-items: center;
   justify-content: center;
   flex: auto;
+  max-height: 650px;
 }
 
 .loading {
@@ -106,7 +112,7 @@
   overflow: hidden;
 }
 
-.name p{
+.name p {
   max-height: 42px;
   line-height: 21px;
   overflow: hidden;
@@ -130,53 +136,62 @@
 }
 
 /* selection menus */
-.selections{
+
+.selections {
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
   width: 40%;
 }
+
 .collapse-parent {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+
 .collapse-content {
   margin-right: -7px;
 }
 
-.character__list, .boss__list {
+.character__list,
+.boss__list {
   width: 100%;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr) ;
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   box-sizing: border-box;
 }
 
-.character__list li:hover, .boss__list li:hover{
+.character__list li:hover,
+.boss__list li:hover {
   cursor: pointer;
 }
 
-.character__list .portrait, .boss__list .portrait {
+.character__list .portrait,
+.boss__list .portrait {
   align-self: center;
   justify-self: center;
   height: 100%;
 }
 
-.character__list .name p, .boss__list .name p{
+.character__list .name p,
+.boss__list .name p {
   font-size: 12px;
   line-height: 14px;
   max-height: 30px;
 }
-.character__list .name, .boss__list .name {
+
+.character__list .name,
+.boss__list .name {
   padding: 0px 3px;
 }
 
 .excluded {
-position: relative;
-opacity: 0.4;
-transition: opacity 0.2s ease-in-out;
+  position: relative;
+  opacity: 0.4;
+  transition: opacity 0.2s ease-in-out;
 }
 
 
@@ -190,62 +205,120 @@ transition: opacity 0.2s ease-in-out;
   }
 }
 
+@keyframes shake {
+  0% {
+    transform: translateX(0)
+  }
+
+  5% {
+    transform: translateX(4px)
+  }
+
+  10% {
+    transform: translateX(-4px)
+  }
+
+  15% {
+    transform: translateX(4px)
+  }
+
+  20% {
+    transform: translateX(0)
+  }
+}
+
 /* responsive */
-@media (max-width: 2000px){
-  .character__list, .boss__list {
-    grid-template-columns: repeat(5, 1fr) ;
+@media (max-width: 2000px) {
+
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
+
 @media (max-width:1700px) {
-  .character__list, .boss__list {
-    grid-template-columns: repeat(4, 1fr) ;
+
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
+
 @media (max-width:1350px) {
-  .character__list, .boss__list {
-    grid-template-columns: repeat(3, 1fr) ;
+
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width:1050px) {
-  .character__list .name p, .boss__list .name p{
+
+  .character__list .name p,
+  .boss__list .name p {
     font-size: 10px;
     line-height: 12px;
     max-height: 26px;
   }
 }
+
 @media (max-width:1125px) {
-  .selections, .generator {
+
+  .selections,
+  .generator {
     width: 95%;
   }
 
-  .character__list, .boss__list {
-    grid-template-columns: repeat(6, 1fr) ;
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(6, 1fr);
   }
-  .character__list .name p, .boss__list .name p{
+
+  .character__list .name p,
+  .boss__list .name p {
     font-size: 14px;
     line-height: 16px;
     max-height: 33px;
   }
 }
-@media (max-width:900px) {
-  .character__list, .boss__list {
-    grid-template-columns: repeat(5, 1fr) ;
+
+@media (max-width:950px) {
+
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media (max-width:800px) {
-  .character__list, .boss__list {
-    grid-template-columns: repeat(4, 1fr) ;
+
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(4, 1fr);
   }
+
+  .errormsg {
+    font-size: 18px;
+  }
+
 }
 
 @media (max-width:600px) {
-  .character__list, .boss__list {
-    grid-template-columns: repeat(3, 1fr) ;
+
+  .character__list,
+  .boss__list {
+    grid-template-columns: repeat(3, 1fr);
   }
+
+  .loading,
+  .generator__result {
+    max-height: none;
+  }
+
   .team {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .portrait {
     max-height: 180px;
   }
@@ -260,7 +333,9 @@ transition: opacity 0.2s ease-in-out;
 }
 
 @media (max-width:450px) {
-  .character__list .name p, .boss__list .name p{
+
+  .character__list .name p,
+  .boss__list .name p {
     font-size: 11px;
     line-height: 14px;
     max-height: 28px;

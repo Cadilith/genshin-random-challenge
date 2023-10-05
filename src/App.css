@@ -116,12 +116,14 @@ footer {
 footer p {
   margin-bottom: 10px;
 }
+
 @media (max-width:1125px) {
   main {
     flex-direction: column;
     align-items: center;
   }
 }
+
 @media (max-width:800px) {
   h1 {
     font-size: 40px;

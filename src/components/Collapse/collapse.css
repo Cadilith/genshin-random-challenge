@@ -52,7 +52,7 @@ button {
     height: 25vh;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .collapse-title{
   padding: 5px 10px 5px 10px;
   }
