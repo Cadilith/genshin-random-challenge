@@ -129,11 +129,19 @@ function App() {
       </header>
       <main>
         <div className='selections'>
-          <Collapse collapseTitle='Exclude characters'>
+          <Collapse collapseTitle='exclude characters'>
             <ul className='character__list'>
               {characterList.map((character, index) => (
                 <li key={character + index} id={character} onClick={excludecharacterHandler} >
                   <MenuItem key={character} cover={"/characters/" + getCoverImg(character) + '.png'} name={capitalizeFirstLetter(character)} />
+                </li>
+              ))}
+            </ul></Collapse>
+            <Collapse collapseTitle='exclude bosses'>
+            <ul className='boss__list'>
+              {bossList.map((boss, index) => (
+                <li key={boss + index} id={boss} onClick={excludecharacterHandler} >
+                  <MenuItem key={boss} cover={"/bosses/" + getCoverImg(boss) + '.png'} name={capitalizeFirstLetter(boss)} />
                 </li>
               ))}
             </ul></Collapse>
