@@ -6,7 +6,16 @@ More features will be added in the future.
 
 # Patch notes
 
-v. - date - content
+v.1.0 - Sep 21, 2023 - First version of the application. 
+Basic randomizer with all available characters and bosses.
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
