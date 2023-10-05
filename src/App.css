@@ -90,13 +90,13 @@ header {
 main {
   flex: auto;
   box-sizing: border-box;
-  max-width: 1024px;
+  max-width: 1900px;
   margin: auto;
   border-radius: 20px;
-  width: 75%;
+  width: 90%;
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 50px;
   gap: 30px;
 }
