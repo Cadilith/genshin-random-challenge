@@ -10,8 +10,10 @@ import MenuItem from './components/MenuItem/MenuItem';
 
 function App() {
   const [errorMsg, setErrorMsg] = useState();
-  let initialCharacters = characterList;
+  const initialCharacters = characterList;
+  const initialbosses = bossList;
   const [availableCharacters, setAvailableCharacters] = useState(initialCharacters);
+  const [availableBosses, setAvailableBosses] = useState(initialbosses);
   const bosses = bossList;
   const initialText = 'Generate';
   const [buttonText, setButtonText] = useState(initialText);
@@ -45,7 +47,7 @@ function App() {
 
   //pick random boss name
   const getRandomBoss = () => {
-    setRandomBoss(randomize(bosses));
+    setRandomBoss(randomize(availableBosses));
   };
 
   //Set a team of 4 random characters from the list
@@ -109,7 +111,7 @@ function App() {
     //if item is available, exclude him
     if ((state.indexOf(name) > -1) === true) {
       setState(
-        state.filter(character => character !== name));
+        state.filter(item => item !== name));
       //if item is already axcluded, add it back to the array
     } else if ((state.indexOf(name) > -1) === false) {
       setState(current => [...current, name]);
@@ -117,10 +119,16 @@ function App() {
   }
 
   //exclude character from available selection
-  const excludecharacterHandler = (e) => {
+  const excludeCharacterHandler = (e) => {
     const name = e.currentTarget.id;
     excludeItem(availableCharacters, setAvailableCharacters, name);
   }
+
+    //exclude boss from available selection
+    const excludeBossHandler = (e) => {
+      const name = e.currentTarget.id;
+      excludeItem(availableBosses, setAvailableBosses, name);
+    }
 
   return (
     <div className="App">
@@ -132,7 +140,7 @@ function App() {
           <Collapse collapseTitle='exclude characters'>
             <ul className='character__list'>
               {characterList.map((character, index) => (
-                <li key={character + index} id={character} onClick={excludecharacterHandler} >
+                <li key={character + index} id={character} onClick={excludeCharacterHandler} >
                   <MenuItem key={character} cover={"/characters/" + getCoverImg(character) + '.png'} name={capitalizeFirstLetter(character)} />
                 </li>
               ))}
@@ -140,7 +148,7 @@ function App() {
             <Collapse collapseTitle='exclude bosses'>
             <ul className='boss__list'>
               {bossList.map((boss, index) => (
-                <li key={boss + index} id={boss} onClick={excludecharacterHandler} >
+                <li key={boss + index} id={boss} onClick={excludeBossHandler} >
                   <MenuItem key={boss} cover={"/bosses/" + getCoverImg(boss) + '.png'} name={capitalizeFirstLetter(boss)} />
                 </li>
               ))}
