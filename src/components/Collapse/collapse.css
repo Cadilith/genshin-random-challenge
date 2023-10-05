@@ -47,6 +47,11 @@ button {
   background-color: transparent;
   border: none;
 }
+@media (max-width:1125px) {
+  .collapse-parent.show{
+    height: 25vh;
+  }
+}
 @media (max-width: 600px) {
   .collapse-title{
   padding: 5px 10px 5px 10px;

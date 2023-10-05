@@ -137,7 +137,7 @@ function App() {
       </header>
       <main>
         <div className='selections'>
-          <Collapse collapseTitle='exclude characters'>
+          <Collapse collapseTitle='Exclude characters'>
             <ul className='character__list'>
               {characterList.map((character, index) => (
                 <li key={character + index} id={character} onClick={excludeCharacterHandler} >
@@ -145,7 +145,7 @@ function App() {
                 </li>
               ))}
             </ul></Collapse>
-            <Collapse collapseTitle='exclude bosses'>
+            <Collapse collapseTitle='Exclude bosses'>
             <ul className='boss__list'>
               {bossList.map((boss, index) => (
                 <li key={boss + index} id={boss} onClick={excludeBossHandler} >
