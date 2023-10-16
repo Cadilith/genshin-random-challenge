@@ -9,13 +9,14 @@ More features will be added in the future.
 v.1.0 - Sep 21, 2023 - First version of the application. 
 Basic randomizer with all available characters and bosses.
 
+V.2.0 - Oct 5, 2023 - You can now exclude characters you don't have, and bosses you don't want to fight.
 
 
 
 
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
