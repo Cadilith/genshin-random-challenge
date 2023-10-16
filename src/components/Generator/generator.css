@@ -113,7 +113,7 @@
 
 .name p {
     max-height: 42px;
-    line-height: 21px;
+    line-height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -130,7 +130,17 @@
 }
 
 /* responsive */
-
+@media (max-width: 1250px) {
+    .name p {
+        font-size: 16px;
+        line-height: 17px;
+    }
+}
+@media (max-width:1125px) {
+    .generator {
+        width: 95%;
+      }
+}
 
 @media (max-width:800px) {
 

@@ -96,8 +96,8 @@
 @media (max-width:450px) {
 
     .menu .name p {
-        font-size: 11px;
-        line-height: 14px;
-        max-height: 28px;
+        font-size: 10px;
+        line-height: 12px;
+        max-height: 25px;
     }
 }

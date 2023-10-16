@@ -56,8 +56,7 @@
 
 @media (max-width:1125px) {
 
-  .selections,
-  .generator {
+  .selections {
     width: 95%;
   }
 }
