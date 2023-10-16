@@ -1,0 +1,103 @@
+.menu {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.menu li:hover {
+    cursor: pointer;
+}
+
+.menu .portrait {
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+}
+
+.menu .name {
+    padding: 0px 3px;
+}
+
+.menu .name p {
+    font-size: 12px;
+    line-height: 14px;
+    max-height: 30px;
+}
+
+/* responsive */
+@media (max-width: 2000px) {
+
+    .menu {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width:1700px) {
+
+    .menu {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width:1350px) {
+
+    .menu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:1050px) {
+
+    .menu .name p {
+        font-size: 10px;
+        line-height: 12px;
+        max-height: 26px;
+    }
+}
+
+@media (max-width:1125px) {
+
+    .menu {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .menu .name p {
+        font-size: 14px;
+        line-height: 16px;
+        max-height: 33px;
+    }
+}
+
+@media (max-width:950px) {
+
+    .menu {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width:800px) {
+
+    .menu {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media (max-width:600px) {
+
+    .menu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:450px) {
+
+    .menu .name p {
+        font-size: 11px;
+        line-height: 14px;
+        max-height: 28px;
+    }
+}
