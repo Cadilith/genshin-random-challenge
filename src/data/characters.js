@@ -64,6 +64,7 @@ export const characterList = [
     "hydro traveler",
     "venti",
     "wanderer",
+    "Wriothesley",
     "xiangling",
     "xiao",
     "xingqiu",
