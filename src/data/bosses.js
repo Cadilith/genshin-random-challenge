@@ -33,4 +33,6 @@ export const bossList = ["Cryo Regisvine",
     "Apep Oasis Guardian",
 "Millennial Pearl Seahorse",
 "Experimental Field Generator",
+"All Devouring Narwhal",
+"Hydro Tulpa"
 ]

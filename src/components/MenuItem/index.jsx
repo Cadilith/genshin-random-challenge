@@ -9,7 +9,7 @@ function MenuItem({ cover, name }) {
     }
 
     return (
-        <div className={`portrait ${excluded ? 'excluded' : ''}`} onClick={toggle} key={name} id={name}>
+        <div className={`portrait ${excluded ? 'excluded' : ''}`} onClick={toggle} key={name} id={name} data-testid='item'>
             <img className="img" src={cover} alt={name} />
             <div className="name"><p>{name}</p></div>
         </div>

@@ -17,14 +17,15 @@
     height: 100%;
 }
 
-.menu .name {
-    padding: 0px 3px;
+.menu .portrait .name {
+    padding: 0px
 }
 
 .menu .name p {
     font-size: 12px;
-    line-height: 14px;
-    max-height: 30px;
+    line-height: 13px;
+    max-height: 25px;
+    padding: 2px;
 }
 
 /* responsive */
