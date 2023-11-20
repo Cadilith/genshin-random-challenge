@@ -4,7 +4,7 @@ import arrow from '../../assets/img/arrow.svg'
 
 
 function Collapse(props) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(window.innerWidth >= 1126 ? true : false);
   const toggle = () => {
     setOpen(!open)
   }
