@@ -13,6 +13,7 @@ export const characterList = [
 	'candace',
 	'charlotte',
 	'chevreuse',
+	'Chiori',
 	'chongyun',
 	'collei',
 	'cyno',
